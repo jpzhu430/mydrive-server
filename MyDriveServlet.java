@@ -122,6 +122,7 @@ public class MyDriveServlet extends HttpServlet {
 				} else {
 					//save the uploaded file temporarily
 					//upload it to s3 later if required
+					//assume only one file is uploaded
 					fileItem = item;
 				}
 			}
@@ -384,7 +385,7 @@ public class MyDriveServlet extends HttpServlet {
 		
 		StringBuffer sb = new StringBuffer(res);
 		for(Map.Entry<String, String> e : versionMap.entrySet()){
-			sb.append("," + e.getKey() + ":" + e.getValue());
+			sb.append("," + e.getKey() + "::" + e.getValue());
 		}
 		
 		return sb.toString();
@@ -413,7 +414,7 @@ public class MyDriveServlet extends HttpServlet {
 		StringBuffer sb = new StringBuffer(res);
 		for(String key : keyList){
 			String url = s3.generatePresignedUrl(bucketName, key, expiration).toString();
-			sb.append("," + key + ":" + url);
+			sb.append("," + key + "::" + url);
 		}
 		
 		return sb.toString();
