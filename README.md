@@ -1,4 +1,4 @@
-The "mydrive" application consists of following modules.
+The mydrive application consists of following modules.
 
 1> Server module: a Java Servelt supporting POST method.
    
