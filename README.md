@@ -1,6 +1,6 @@
 The mydrive application consists of following modules.
 
-1> Server module: a Java Servelt supporting POST method.
+1> Server module: a Java Servlet supporting POST method.
    
    For each user, there is an S3 bucket for storing files, and 
    an DynamoDB entry for storing bookkeeping info, which are 
